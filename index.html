@@ -943,7 +943,7 @@
   <div id="aiChatWidget" style="position:fixed; bottom:24px; right:24px; z-index:9999; font-family:'Inter',sans-serif;">
     <button id="aiToggleBtn" onclick="toggleAiChat()" style="background:#0b1528; color:#fff; border:2px solid #0284c7; padding:12px 18px; border-radius:50px; font-weight:700; font-size:13px; display:flex; align-items:center; gap:10px; box-shadow:0 10px 25px rgba(11,21,40,0.35); cursor:pointer;">
       <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#10b981; box-shadow:0 0 6px #10b981;"></span>
-      <span>Akdeniz & Demlab Asistanı (Canlı)</span>
+      <span>Akdeniz Satış Temsilcisi (Mösyö)</span>
     </button>
 
     <div id="aiChatBox" style="display:none; position:absolute; bottom:60px; right:0; width:340px; background:#ffffff; border:1px solid #cbd5e1; border-radius:8px; box-shadow:0 15px 40px rgba(0,0,0,0.18); overflow:hidden;">
@@ -957,7 +957,7 @@
 
       <div id="aiChatMessages" style="padding:14px; max-height:260px; overflow-y:auto; font-size:12px; color:#1e293b; background:#f8fafc; display:flex; flex-direction:column; gap:8px;">
         <div style="background:#fff; border:1px solid #e2e8f0; padding:10px; border-radius:6px; line-height:1.45;">
-          Merhaba! Akdeniz Medikal & Demlab laboratuvar teyit sistemine hoş geldiniz. %96 Etil alkol parti analizi (CoA), fiyatlar veya WhatsApp doğrudan siparişi için size nasıl yardımcı olabilirim?
+          İyi günler Mösyö, Akdeniz Medikal & Laboratuvar tedarik sistemine hoş geldiniz. Size nasıl yardımcı olabilirim?
         </div>
       </div>
 
@@ -1000,15 +1000,15 @@
         
         const q = val.toLowerCase();
         if (q.includes('fiyat') || q.includes('kaç') || q.includes('para') || q.includes('tl')) {
-          aMsg.innerHTML = '<strong>Akdeniz Medikal Resmi Fiyatları:</strong><br>• <strong>5 Litre:</strong> 1.900 TL (HDPE Bidon)<br>• <strong>10 Litre:</strong> 3.500 TL (2x5L Çift Bidon)<br>• <strong>20 Litre:</strong> 6.000 TL (Mega Koli - 300 TL/L)<br><br>Kapıda kontrollü teslimat ve e-fatura dahildir.';
+          aMsg.innerHTML = 'Memnuniyetle Mösyö. Güncel orijinal dolum fiyatlarımız şu şekildedir:<br>• <strong>5 Litre:</strong> 1.900 TL (HDPE Laboratuvar Bidonu)<br>• <strong>10 Litre:</strong> 3.500 TL (2 x 5L Çift Bidon - En çok tercih edilen)<br>• <strong>20 Litre:</strong> 6.000 TL (Mega Sanayi Koli - 300 TL/L)<br><br>Fiyatlarımıza e-fatura, analiz belgesi ve kapıda kontrollü kargo dahildir Mösyö.';
         } else if (q.includes('analiz') || q.includes('saflık') || q.includes('kalite') || q.includes('parti')) {
-          aMsg.innerHTML = 'Ürünlerimiz Gaz Kromatografisi (GC-MS) ile test edilmiş olup <strong>%96.42</strong> hacimsel saflıktadır. Metanol oranı eser miktardadır (< 2.4 ppm). Her bidon indüksiyon folyo mühürlüdür.';
+          aMsg.innerHTML = 'Ürünlerimiz Gaz Kromatografisi (GC-MS) ile test edilmiş olup <strong>%96.42</strong> hacimsel saflıktadır Mösyö. Metanol oranı eser miktardadır (&lt; 2.4 ppm). Her bidon emniyetli indüksiyon folyo mühürlüdür.';
         } else if (q.includes('sahte') || q.includes('güven') || q.includes('dolandırıcı') || q.includes('orijinal')) {
-          aMsg.innerHTML = 'Piyasadaki taklitlere karşı <strong>tüm gönderilerimiz kapıda kontrollü teslimat</strong> ile sevk edilir. Kargo görevlisinin yanında paketi açıp güvenlik bandını ve fatura parti kodunu kontrol etmeden ödeme yapmayınız.';
+          aMsg.innerHTML = 'Çok haklı bir endişe Mösyö. Piyasada maalesef çok fazla taklit var. Tüm gönderilerimiz <strong>KAPIDA KONTROLLÜ TESLİMAT</strong> ile sevk edilir. Kuryenin yanında açıp folyo mührü ve faturanızı incelemeden ödeme yapmayınız. Güveniniz bizim için esastır.';
         } else if (q.includes('demlab') || q.includes('kit') || q.includes('aroma') || q.includes('maya')) {
-          aMsg.innerHTML = 'Fermantasyon kitleri, meşe/anason aromaları ve hammadde setleri için üst menüdeki <strong>🛒 Demlab Online Satış</strong> mağazamızı kullanabilir veya doğrudan WhatsApp hattımızdan sipariş oluşturabilirsiniz.';
+          aMsg.innerHTML = 'Fermantasyon kitleri ve botanik ekstrelerimiz için üst menüdeki <strong>🛒 Demlab Online Satış</strong> mağazamızı inceleyebilir veya WhatsApp üzerinden doğrudan sipariş verebilirsiniz Mösyö.';
         } else {
-          aMsg.innerHTML = 'Talebiniz kaydedildi. Hızlı teyit ve sipariş gönderimi için doğrudan <a href="https://wa.me/905070148254" target="_blank" style="color:#0284c7; font-weight:bold;">0507 014 82 54</a> WhatsApp hattımızdan temsilcimizle görüşebilirsiniz.';
+          aMsg.innerHTML = 'Teşekkür ederim Mösyö. Siparişinizi hemen hazırlayabilmemiz veya detaylı görüşebilmemiz için doğrudan <a href="https://wa.me/905070148254" target="_blank" style="color:#0284c7; font-weight:bold;">0507 014 82 54</a> WhatsApp hattımızdan yazabilirsiniz.';
         }
         
         box.appendChild(aMsg);

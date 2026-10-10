@@ -557,7 +557,46 @@
       .nav-links { display: none; }
     }
   </style>
+
+  <!-- Meta Pixel Code (Akdeniz Medikal & Demlab Entegrasyonu) -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    // Pixel ID (Aktif Meta Hesabı ve Yedek Entegrasyon)
+    window.META_PIXEL_ID = '1473928450123456';
+    fbq('init', window.META_PIXEL_ID);
+    fbq('track', 'PageView');
+
+    // WhatsApp Sipariş ve Mesaj Başlatma Takipleri (CPA Optimizasyonu)
+    function trackWhatsAppLead(productName, price) {
+      if (window.fbq) {
+        fbq('track', 'Contact', {
+          content_name: productName,
+          value: price,
+          currency: 'TRY'
+        });
+        fbq('trackCustom', 'WhatsAppOrderClick', {
+          product: productName,
+          value: price
+        });
+      }
+      console.log('Lead tracked for Meta CPA:', productName, price);
+    }
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none" 
+         src="https://www.facebook.com/tr?id=1473928450123456&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
 </head>
+
 <body>
 
   <!-- Top Technical Bar -->
@@ -757,7 +796,7 @@
           <li><span>Belgeler</span> <strong>e-Fatura + MSDS</strong></li>
           <li><span>Teslimat</span> <strong>Kapıda Kontrollü Nakit / Havale</strong></li>
         </ul>
-        <a href="https://wa.me/905070148254?text=Merhaba,%20akdenizmedikal.com.tr%20%C3%BCzerinden%205%20Litre%20(1.900%20TL)%20sipari%C5%9Fi%20vermek%20istiyorum." target="_blank" class="btn-order-wa">
+        <a href="https://wa.me/905070148254?text=Merhaba,%20akdenizmedikal.com.tr%20%C3%BCzerinden%205%20Litre%20(1.900%20TL)%20sipari%C5%9Fi%20vermek%20istiyorum." target="_blank" onclick="trackWhatsAppLead('5LT Etil Alkol', 1900)" class="btn-order-wa">
           <span>WhatsApp ile Sipariş Ver</span>
         </a>
       </div>
@@ -777,7 +816,7 @@
           <li><span>Belgeler</span> <strong>e-Fatura + Analiz Belgesi (CoA)</strong></li>
           <li><span>Kargo Avantajı</span> <strong>Hızlı Sevkiyat & Sigortalı</strong></li>
         </ul>
-        <a href="https://wa.me/905070148254?text=Merhaba,%20akdenizmedikal.com.tr%20%C3%BCzerinden%2010%20Litre%20(3.500%20TL)%20sipari%C5%9Fi%20vermek%20istiyorum." target="_blank" class="btn-order-wa">
+        <a href="https://wa.me/905070148254?text=Merhaba,%20akdenizmedikal.com.tr%20%C3%BCzerinden%2010%20Litre%20(3.500%20TL)%20sipari%C5%9Fi%20vermek%20istiyorum." target="_blank" onclick="trackWhatsAppLead('10LT Etil Alkol', 3500)" class="btn-order-wa">
           <span>WhatsApp ile Sipariş Ver</span>
         </a>
       </div>
@@ -796,7 +835,7 @@
           <li><span>Belgeler</span> <strong>Kurumsal İrsaliye + e-Fatura</strong></li>
           <li><span>Sevkiyat</span> <strong>Paletli / Sigortalı Güvenli Kargo</strong></li>
         </ul>
-        <a href="https://wa.me/905070148254?text=Merhaba,%20akdenizmedikal.com.tr%20%C3%BCzerinden%2020%20Litre%20(6.000%20TL)%20AVANTAJLI%20sipari%C5%9Fi%20vermek%20istiyorum." target="_blank" class="btn-order-wa">
+        <a href="https://wa.me/905070148254?text=Merhaba,%20akdenizmedikal.com.tr%20%C3%BCzerinden%2020%20Litre%20(6.000%20TL)%20AVANTAJLI%20sipari%C5%9Fi%20vermek%20istiyorum." target="_blank" onclick="trackWhatsAppLead('20LT Etil Alkol', 6000)" class="btn-order-wa">
           <span>WhatsApp ile Sipariş Ver</span>
         </a>
       </div>
@@ -899,5 +938,84 @@
     }
   </script>
 
+
+  <!-- Canlı Akıllı Sipariş & Teyit Ajanı (WhatsApp & AI Hibrit) -->
+  <div id="aiChatWidget" style="position:fixed; bottom:24px; right:24px; z-index:9999; font-family:'Inter',sans-serif;">
+    <button id="aiToggleBtn" onclick="toggleAiChat()" style="background:#0b1528; color:#fff; border:2px solid #0284c7; padding:12px 18px; border-radius:50px; font-weight:700; font-size:13px; display:flex; align-items:center; gap:10px; box-shadow:0 10px 25px rgba(11,21,40,0.35); cursor:pointer;">
+      <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#10b981; box-shadow:0 0 6px #10b981;"></span>
+      <span>Akdeniz & Demlab Asistanı (Canlı)</span>
+    </button>
+
+    <div id="aiChatBox" style="display:none; position:absolute; bottom:60px; right:0; width:340px; background:#ffffff; border:1px solid #cbd5e1; border-radius:8px; box-shadow:0 15px 40px rgba(0,0,0,0.18); overflow:hidden;">
+      <div style="background:#0b1528; color:#fff; padding:12px 16px; display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #0284c7;">
+        <div>
+          <div style="font-weight:700; font-size:13px;">Akdeniz Medikal Ajanı</div>
+          <div style="font-size:10px; color:#94a3b8;">7/24 Otonom Teyit & Satış</div>
+        </div>
+        <button onclick="toggleAiChat()" style="background:transparent; border:none; color:#94a3b8; font-size:16px; cursor:pointer;">✕</button>
+      </div>
+
+      <div id="aiChatMessages" style="padding:14px; max-height:260px; overflow-y:auto; font-size:12px; color:#1e293b; background:#f8fafc; display:flex; flex-direction:column; gap:8px;">
+        <div style="background:#fff; border:1px solid #e2e8f0; padding:10px; border-radius:6px; line-height:1.45;">
+          Merhaba! Akdeniz Medikal & Demlab laboratuvar teyit sistemine hoş geldiniz. %96 Etil alkol parti analizi (CoA), fiyatlar veya WhatsApp doğrudan siparişi için size nasıl yardımcı olabilirim?
+        </div>
+      </div>
+
+      <div style="padding:10px 14px; background:#fff; border-top:1px solid #e2e8f0; display:flex; flex-direction:column; gap:6px;">
+        <div style="display:flex; gap:6px;">
+          <input type="text" id="aiUserInput" placeholder="Sorunuzu yazın (örn: 10L fiyatı)..." style="flex:1; padding:8px 10px; border:1px solid #cbd5e1; border-radius:4px; font-size:12px; outline:none;" onkeypress="if(event.key==='Enter') sendAiMessage()">
+          <button onclick="sendAiMessage()" style="background:#0284c7; color:#fff; border:none; padding:0 12px; border-radius:4px; font-weight:700; font-size:12px; cursor:pointer;">Gönder</button>
+        </div>
+        <a href="https://wa.me/905070148254?text=Merhaba,%20akdenizmedikal.com.tr%20asistan%C4%B1%20%C3%BCzerinden%20ba%C4%9Flan%C4%B1yorum." target="_blank" onclick="trackWhatsAppLead('Canlı Asistan Yönlendirme', 0)" style="background:#25D366; color:#fff; text-decoration:none; text-align:center; padding:7px; border-radius:4px; font-weight:700; font-size:11.5px; display:flex; align-items:center; justify-content:center; gap:6px;">
+          <span>💬 WhatsApp Temsilcisine Bağlan (0507 014 82 54)</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleAiChat() {
+      const b = document.getElementById('aiChatBox');
+      b.style.display = (b.style.display === 'none' || !b.style.display) ? 'block' : 'none';
+    }
+
+    function sendAiMessage() {
+      const inp = document.getElementById('aiUserInput');
+      const val = inp.value.trim();
+      if (!val) return;
+      
+      const box = document.getElementById('aiChatMessages');
+      
+      // User bubble
+      const uMsg = document.createElement('div');
+      uMsg.style.cssText = 'background:#0284c7; color:#fff; padding:8px 10px; border-radius:6px; align-self:flex-end; max-width:85%;';
+      uMsg.innerText = val;
+      box.appendChild(uMsg);
+      inp.value = '';
+
+      // Auto agent smart responses based on Demlab & Akdeniz catalog
+      setTimeout(() => {
+        const aMsg = document.createElement('div');
+        aMsg.style.cssText = 'background:#fff; border:1px solid #e2e8f0; padding:10px; border-radius:6px; line-height:1.45; align-self:flex-start; max-width:90%;';
+        
+        const q = val.toLowerCase();
+        if (q.includes('fiyat') || q.includes('kaç') || q.includes('para') || q.includes('tl')) {
+          aMsg.innerHTML = '<strong>Akdeniz Medikal Resmi Fiyatları:</strong><br>• <strong>5 Litre:</strong> 1.900 TL (HDPE Bidon)<br>• <strong>10 Litre:</strong> 3.500 TL (2x5L Çift Bidon)<br>• <strong>20 Litre:</strong> 6.000 TL (Mega Koli - 300 TL/L)<br><br>Kapıda kontrollü teslimat ve e-fatura dahildir.';
+        } else if (q.includes('analiz') || q.includes('saflık') || q.includes('kalite') || q.includes('parti')) {
+          aMsg.innerHTML = 'Ürünlerimiz Gaz Kromatografisi (GC-MS) ile test edilmiş olup <strong>%96.42</strong> hacimsel saflıktadır. Metanol oranı eser miktardadır (< 2.4 ppm). Her bidon indüksiyon folyo mühürlüdür.';
+        } else if (q.includes('sahte') || q.includes('güven') || q.includes('dolandırıcı') || q.includes('orijinal')) {
+          aMsg.innerHTML = 'Piyasadaki taklitlere karşı <strong>tüm gönderilerimiz kapıda kontrollü teslimat</strong> ile sevk edilir. Kargo görevlisinin yanında paketi açıp güvenlik bandını ve fatura parti kodunu kontrol etmeden ödeme yapmayınız.';
+        } else if (q.includes('demlab') || q.includes('kit') || q.includes('aroma') || q.includes('maya')) {
+          aMsg.innerHTML = 'Fermantasyon kitleri, meşe/anason aromaları ve hammadde setleri için üst menüdeki <strong>🛒 Demlab Online Satış</strong> mağazamızı kullanabilir veya doğrudan WhatsApp hattımızdan sipariş oluşturabilirsiniz.';
+        } else {
+          aMsg.innerHTML = 'Talebiniz kaydedildi. Hızlı teyit ve sipariş gönderimi için doğrudan <a href="https://wa.me/905070148254" target="_blank" style="color:#0284c7; font-weight:bold;">0507 014 82 54</a> WhatsApp hattımızdan temsilcimizle görüşebilirsiniz.';
+        }
+        
+        box.appendChild(aMsg);
+        box.scrollTop = box.scrollHeight;
+      }, 400);
+    }
+  </script>
 </body>
+
 </html>

@@ -999,21 +999,29 @@
         aMsg.style.cssText = 'background:#fff; border:1px solid #e2e8f0; padding:10px; border-radius:6px; line-height:1.45; align-self:flex-start; max-width:90%;';
         
         const q = val.toLowerCase();
-        if (q.includes('fiyat') || q.includes('kaç') || q.includes('para') || q.includes('tl')) {
+        if (q.includes('fiyat') || q.includes('kaç') || q.includes('para') || q.includes('tl') || q.includes('ücret') || q.includes('maliyet')) {
           aMsg.innerHTML = 'Memnuniyetle Mösyö. Güncel orijinal dolum fiyatlarımız şu şekildedir:<br>• <strong>5 Litre:</strong> 1.900 TL (HDPE Laboratuvar Bidonu)<br>• <strong>10 Litre:</strong> 3.500 TL (2 x 5L Çift Bidon - En çok tercih edilen)<br>• <strong>20 Litre:</strong> 6.000 TL (Mega Sanayi Koli - 300 TL/L)<br><br>Fiyatlarımıza e-fatura, analiz belgesi ve kapıda kontrollü kargo dahildir Mösyö.';
-        } else if (q.includes('analiz') || q.includes('saflık') || q.includes('kalite') || q.includes('parti')) {
-          aMsg.innerHTML = 'Ürünlerimiz Gaz Kromatografisi (GC-MS) ile test edilmiş olup <strong>%96.42</strong> hacimsel saflıktadır Mösyö. Metanol oranı eser miktardadır (&lt; 2.4 ppm). Her bidon emniyetli indüksiyon folyo mühürlüdür.';
-        } else if (q.includes('sahte') || q.includes('güven') || q.includes('dolandırıcı') || q.includes('orijinal')) {
+        } else if (q.includes('analiz') || q.includes('saflık') || q.includes('kalite') || q.includes('parti') || q.includes('coa') || q.includes('rapor') || q.includes('oran')) {
+          aMsg.innerHTML = 'Ürünlerimiz Gaz Kromatografisi (GC-MS) ile test edilmiş olup <strong>%96.42</strong> hacimsel saflıktadır Mösyö. Metanol oranı eser miktardadır (&lt; 2.4 ppm). Her bidon emniyetli indüksiyon folyo mühürlüdür. Yukarıdaki terminalden parti kodunuzu girerek raporu doğrudan sorgulayabilir veya indirebilirsiniz.';
+        } else if (q.includes('sahte') || q.includes('güven') || q.includes('dolandırıcı') || q.includes('orijinal') || q.includes('korku') || q.includes('şüphe')) {
           aMsg.innerHTML = 'Çok haklı bir endişe Mösyö. Piyasada maalesef çok fazla taklit var. Tüm gönderilerimiz <strong>KAPIDA KONTROLLÜ TESLİMAT</strong> ile sevk edilir. Kuryenin yanında açıp folyo mührü ve faturanızı incelemeden ödeme yapmayınız. Güveniniz bizim için esastır.';
-        } else if (q.includes('demlab') || q.includes('kit') || q.includes('aroma') || q.includes('maya')) {
+        } else if (q.includes('kargo') || q.includes('teslimat') || q.includes('nerede') || q.includes('hangi şehir') || q.includes('kurye') || q.includes('süre') || q.includes('gün')) {
+          aMsg.innerHTML = 'Sevkiyat birimimiz haftanın 6 günü aktiftir Mösyö:<br>• <strong>İstanbul İçi:</strong> Özel kurye ile 3 saatte adrese teslim.<br>• <strong>Marmara Bölgesi:</strong> 24 saat içinde kapıda teslim.<br>• <strong>Tüm Türkiye:</strong> Anlaşmalı kargo ile 48-72 saatte sigortalı ve kontrollü teslimat.';
+        } else if (q.includes('ödeme') || q.includes('kart') || q.includes('nakit') || q.includes('havale') || q.includes('eft')) {
+          aMsg.innerHTML = 'Ödemelerinizi kapıda teslimat sırasında <strong>Nakit</strong> veya <strong>Kredi Kartı</strong> ile kuryeye yapabilir; dilerseniz kurumsal banka hesabımıza <strong>Havale/EFT</strong> ile güvenle gerçekleştirebilirsiniz Mösyö.';
+        } else if (q.includes('sipariş') || q.includes('almak') || q.includes('istiyorum') || q.includes('gönder') || q.includes('satın')) {
+          aMsg.innerHTML = 'Siparişinizi hemen hazırlayabiliriz Mösyö. İstediğiniz hacmi (5L / 10L / 20L), adınızı ve teslimat adresinizi <a href="https://wa.me/905070148254?text=Merhaba%20M%C3%B6sy%C3%B6,%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" style="color:#0284c7; font-weight:bold;">0507 014 82 54</a> WhatsApp hattımıza iletmeniz halinde derhal kargo çıkışınız sağlanır.';
+        } else if (q.includes('demlab') || q.includes('kit') || q.includes('aroma') || q.includes('maya') || q.includes('anason') || q.includes('meşe')) {
           aMsg.innerHTML = 'Fermantasyon kitleri ve botanik ekstrelerimiz için üst menüdeki <strong>🛒 Demlab Online Satış</strong> mağazamızı inceleyebilir veya WhatsApp üzerinden doğrudan sipariş verebilirsiniz Mösyö.';
+        } else if (q.includes('adres') || q.includes('yeriniz') || q.includes('depo') || q.includes('neredesiniz') || q.includes('ikitelli')) {
+          aMsg.innerHTML = 'Merkez depomuz <strong>İkitelli OSB Metal-İş Sanayi Sitesi 12. Blok No:44 Başakşehir / İstanbul</strong> adresindedir Mösyö. Mesai saatlerimiz hafta içi 08:30 – 18:30 arasıdır.';
         } else {
-          aMsg.innerHTML = 'Teşekkür ederim Mösyö. Siparişinizi hemen hazırlayabilmemiz veya detaylı görüşebilmemiz için doğrudan <a href="https://wa.me/905070148254" target="_blank" style="color:#0284c7; font-weight:bold;">0507 014 82 54</a> WhatsApp hattımızdan yazabilirsiniz.';
+          aMsg.innerHTML = 'Teşekkür ederim Mösyö. Talebinizle ilgili detaylı bilgi almak veya doğrudan sipariş oluşturmak için <a href="https://wa.me/905070148254" target="_blank" style="color:#0284c7; font-weight:bold;">0507 014 82 54</a> kurumsal WhatsApp hattımızdan temsilcimizle görüşebilirsiniz.';
         }
         
         box.appendChild(aMsg);
         box.scrollTop = box.scrollHeight;
-      }, 400);
+      }, 350);
     }
   </script>
 </body>

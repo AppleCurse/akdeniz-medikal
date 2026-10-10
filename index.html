@@ -939,91 +939,13 @@
   </script>
 
 
-  <!-- Canlı Akıllı Sipariş & Teyit Ajanı (WhatsApp & AI Hibrit) -->
-  <div id="aiChatWidget" style="position:fixed; bottom:24px; right:24px; z-index:9999; font-family:'Inter',sans-serif;">
-    <button id="aiToggleBtn" onclick="toggleAiChat()" style="background:#0b1528; color:#fff; border:2px solid #0284c7; padding:12px 18px; border-radius:50px; font-weight:700; font-size:13px; display:flex; align-items:center; gap:10px; box-shadow:0 10px 25px rgba(11,21,40,0.35); cursor:pointer;">
-      <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:#10b981; box-shadow:0 0 6px #10b981;"></span>
-      <span>Akdeniz Satış Temsilcisi (Mösyö)</span>
-    </button>
-
-    <div id="aiChatBox" style="display:none; position:absolute; bottom:60px; right:0; width:340px; background:#ffffff; border:1px solid #cbd5e1; border-radius:8px; box-shadow:0 15px 40px rgba(0,0,0,0.18); overflow:hidden;">
-      <div style="background:#0b1528; color:#fff; padding:12px 16px; display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid #0284c7;">
-        <div>
-          <div style="font-weight:700; font-size:13px;">Akdeniz Medikal Ajanı</div>
-          <div style="font-size:10px; color:#94a3b8;">7/24 Otonom Teyit & Satış</div>
-        </div>
-        <button onclick="toggleAiChat()" style="background:transparent; border:none; color:#94a3b8; font-size:16px; cursor:pointer;">✕</button>
-      </div>
-
-      <div id="aiChatMessages" style="padding:14px; max-height:260px; overflow-y:auto; font-size:12px; color:#1e293b; background:#f8fafc; display:flex; flex-direction:column; gap:8px;">
-        <div style="background:#fff; border:1px solid #e2e8f0; padding:10px; border-radius:6px; line-height:1.45;">
-          İyi günler Mösyö, Akdeniz Medikal & Laboratuvar tedarik sistemine hoş geldiniz. Size nasıl yardımcı olabilirim?
-        </div>
-      </div>
-
-      <div style="padding:10px 14px; background:#fff; border-top:1px solid #e2e8f0; display:flex; flex-direction:column; gap:6px;">
-        <div style="display:flex; gap:6px;">
-          <input type="text" id="aiUserInput" placeholder="Sorunuzu yazın (örn: 10L fiyatı)..." style="flex:1; padding:8px 10px; border:1px solid #cbd5e1; border-radius:4px; font-size:12px; outline:none;" onkeypress="if(event.key==='Enter') sendAiMessage()">
-          <button onclick="sendAiMessage()" style="background:#0284c7; color:#fff; border:none; padding:0 12px; border-radius:4px; font-weight:700; font-size:12px; cursor:pointer;">Gönder</button>
-        </div>
-        <a href="https://wa.me/905070148254?text=Merhaba,%20akdenizmedikal.com.tr%20asistan%C4%B1%20%C3%BCzerinden%20ba%C4%9Flan%C4%B1yorum." target="_blank" onclick="trackWhatsAppLead('Canlı Asistan Yönlendirme', 0)" style="background:#25D366; color:#fff; text-decoration:none; text-align:center; padding:7px; border-radius:4px; font-weight:700; font-size:11.5px; display:flex; align-items:center; justify-content:center; gap:6px;">
-          <span>💬 WhatsApp Temsilcisine Bağlan (0507 014 82 54)</span>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function toggleAiChat() {
-      const b = document.getElementById('aiChatBox');
-      b.style.display = (b.style.display === 'none' || !b.style.display) ? 'block' : 'none';
-    }
-
-    function sendAiMessage() {
-      const inp = document.getElementById('aiUserInput');
-      const val = inp.value.trim();
-      if (!val) return;
-      
-      const box = document.getElementById('aiChatMessages');
-      
-      // User bubble
-      const uMsg = document.createElement('div');
-      uMsg.style.cssText = 'background:#0284c7; color:#fff; padding:8px 10px; border-radius:6px; align-self:flex-end; max-width:85%;';
-      uMsg.innerText = val;
-      box.appendChild(uMsg);
-      inp.value = '';
-
-      // Auto agent smart responses based on Demlab & Akdeniz catalog
-      setTimeout(() => {
-        const aMsg = document.createElement('div');
-        aMsg.style.cssText = 'background:#fff; border:1px solid #e2e8f0; padding:10px; border-radius:6px; line-height:1.45; align-self:flex-start; max-width:90%;';
-        
-        const q = val.toLowerCase();
-        if (q.includes('fiyat') || q.includes('kaç') || q.includes('para') || q.includes('tl') || q.includes('ücret') || q.includes('maliyet')) {
-          aMsg.innerHTML = 'Memnuniyetle Mösyö. Güncel orijinal dolum fiyatlarımız şu şekildedir:<br>• <strong>5 Litre:</strong> 1.900 TL (HDPE Laboratuvar Bidonu)<br>• <strong>10 Litre:</strong> 3.500 TL (2 x 5L Çift Bidon - En çok tercih edilen)<br>• <strong>20 Litre:</strong> 6.000 TL (Mega Sanayi Koli - 300 TL/L)<br><br>Fiyatlarımıza e-fatura, analiz belgesi ve kapıda kontrollü kargo dahildir Mösyö.';
-        } else if (q.includes('analiz') || q.includes('saflık') || q.includes('kalite') || q.includes('parti') || q.includes('coa') || q.includes('rapor') || q.includes('oran')) {
-          aMsg.innerHTML = 'Ürünlerimiz Gaz Kromatografisi (GC-MS) ile test edilmiş olup <strong>%96.42</strong> hacimsel saflıktadır Mösyö. Metanol oranı eser miktardadır (&lt; 2.4 ppm). Her bidon emniyetli indüksiyon folyo mühürlüdür. Yukarıdaki terminalden parti kodunuzu girerek raporu doğrudan sorgulayabilir veya indirebilirsiniz.';
-        } else if (q.includes('sahte') || q.includes('güven') || q.includes('dolandırıcı') || q.includes('orijinal') || q.includes('korku') || q.includes('şüphe')) {
-          aMsg.innerHTML = 'Çok haklı bir endişe Mösyö. Piyasada maalesef çok fazla taklit var. Tüm gönderilerimiz <strong>KAPIDA KONTROLLÜ TESLİMAT</strong> ile sevk edilir. Kuryenin yanında açıp folyo mührü ve faturanızı incelemeden ödeme yapmayınız. Güveniniz bizim için esastır.';
-        } else if (q.includes('kargo') || q.includes('teslimat') || q.includes('nerede') || q.includes('hangi şehir') || q.includes('kurye') || q.includes('süre') || q.includes('gün')) {
-          aMsg.innerHTML = 'Sevkiyat birimimiz haftanın 6 günü aktiftir Mösyö:<br>• <strong>İstanbul İçi:</strong> Özel kurye ile 3 saatte adrese teslim.<br>• <strong>Marmara Bölgesi:</strong> 24 saat içinde kapıda teslim.<br>• <strong>Tüm Türkiye:</strong> Anlaşmalı kargo ile 48-72 saatte sigortalı ve kontrollü teslimat.';
-        } else if (q.includes('ödeme') || q.includes('kart') || q.includes('nakit') || q.includes('havale') || q.includes('eft')) {
-          aMsg.innerHTML = 'Ödemelerinizi kapıda teslimat sırasında <strong>Nakit</strong> veya <strong>Kredi Kartı</strong> ile kuryeye yapabilir; dilerseniz kurumsal banka hesabımıza <strong>Havale/EFT</strong> ile güvenle gerçekleştirebilirsiniz Mösyö.';
-        } else if (q.includes('sipariş') || q.includes('almak') || q.includes('istiyorum') || q.includes('gönder') || q.includes('satın')) {
-          aMsg.innerHTML = 'Siparişinizi hemen hazırlayabiliriz Mösyö. İstediğiniz hacmi (5L / 10L / 20L), adınızı ve teslimat adresinizi <a href="https://wa.me/905070148254?text=Merhaba%20M%C3%B6sy%C3%B6,%20sipari%C5%9F%20vermek%20istiyorum." target="_blank" style="color:#0284c7; font-weight:bold;">0507 014 82 54</a> WhatsApp hattımıza iletmeniz halinde derhal kargo çıkışınız sağlanır.';
-        } else if (q.includes('demlab') || q.includes('kit') || q.includes('aroma') || q.includes('maya') || q.includes('anason') || q.includes('meşe')) {
-          aMsg.innerHTML = 'Fermantasyon kitleri ve botanik ekstrelerimiz için üst menüdeki <strong>🛒 Demlab Online Satış</strong> mağazamızı inceleyebilir veya WhatsApp üzerinden doğrudan sipariş verebilirsiniz Mösyö.';
-        } else if (q.includes('adres') || q.includes('yeriniz') || q.includes('depo') || q.includes('neredesiniz') || q.includes('ikitelli')) {
-          aMsg.innerHTML = 'Merkez depomuz <strong>İkitelli OSB Metal-İş Sanayi Sitesi 12. Blok No:44 Başakşehir / İstanbul</strong> adresindedir Mösyö. Mesai saatlerimiz hafta içi 08:30 – 18:30 arasıdır.';
-        } else {
-          aMsg.innerHTML = 'Teşekkür ederim Mösyö. Talebinizle ilgili detaylı bilgi almak veya doğrudan sipariş oluşturmak için <a href="https://wa.me/905070148254" target="_blank" style="color:#0284c7; font-weight:bold;">0507 014 82 54</a> kurumsal WhatsApp hattımızdan temsilcimizle görüşebilirsiniz.';
-        }
-        
-        box.appendChild(aMsg);
-        box.scrollTop = box.scrollHeight;
-      }, 350);
-    }
-  </script>
+  <!-- Doğrudan Resmi WhatsApp İletişim Butonu (Bot/Yapay Zeka Değil - Doğrudan Hat) -->
+  <a href="https://wa.me/905070148254" target="_blank" rel="noopener noreferrer" style="position:fixed; bottom:24px; right:24px; z-index:9999; background:#25D366; color:#ffffff; padding:12px 20px; border-radius:50px; font-weight:700; font-size:14px; display:inline-flex; align-items:center; gap:10px; box-shadow:0 10px 25px rgba(37,211,102,0.4); text-decoration:none;">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.288.043.088.072.19.014.305-.058.115-.087.187-.173.289l-.26.309c-.087.087-.178.182-.077.355.101.173.448.739.962 1.196.661.587 1.218.769 1.391.856.173.087.274.072.376-.044.101-.116.433-.506.549-.679.116-.173.231-.144.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z"/>
+    </svg>
+    <span>0507 014 82 54 (WhatsApp Doğrudan İletişim)</span>
+  </a>
 </body>
 
 </html>

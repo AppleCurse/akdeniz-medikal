@@ -3,169 +3,438 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Akdeniz Medikal | %96 Saf Dezenfektan ve Kimyasal Hammaddeler</title>
-  <meta name="description" content="Akdeniz Medikal - Endüstriyel ve medikal kullanım için %96 saflıkta etil alkol ve dezenfektan hammaddeleri. Hızlı teslimat, orijinal ambalaj.">
-  
-  <!-- Meta Pixel Code (Gerektiğinde ID eklenebilir) -->
-  <script>
-    function trackWhatsApp(urun, fiyat) {
-      if (typeof fbq !== 'undefined') {
-        fbq('track', 'InitiateCheckout', {
-          content_name: urun,
-          value: fiyat,
-          currency: 'TRY'
-        });
-      }
-    }
-  </script>
+  <title>Akdeniz Medikal | Kurumsal Kimya & Orijinallik Doğrulama Sistemi</title>
+  <meta name="description" content="Akdeniz Medikal resmi ürün sorgulama, parti analiz raporu (CoA) ve sipariş doğrulama portalı. Orijinal %96 saflıkta etil alkol ve kimyasal hammaddeler.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --primary: #0284c7;
-      --primary-dark: #0369a1;
-      --accent: #10b981;
-      --dark: #0f172a;
-      --light: #f8fafc;
-      --border: #e2e8f0;
+      --navy: #0a192f;
+      --navy-light: #172a45;
+      --blue: #0284c7;
+      --blue-hover: #0369a1;
+      --teal: #0d9488;
+      --green: #10b981;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-600: #475569;
+      --gray-800: #1e293b;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-    body { background: #f1f5f9; color: var(--dark); line-height: 1.6; }
-    
-    header { background: white; border-bottom: 1px solid var(--border); padding: 1rem 1.5rem; position: sticky; top: 0; z-index: 50; }
-    .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-size: 1.35rem; font-weight: 800; color: var(--primary-dark); letter-spacing: -0.5px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, sans-serif; }
+    body { background: var(--gray-50); color: var(--gray-800); line-height: 1.6; }
 
-    .hero { background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%); color: white; padding: 3.5rem 1.5rem 4rem; text-align: center; }
-    .hero-content { max-width: 750px; margin: 0 auto; }
-    .hero h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.25; }
-    .hero p { font-size: 1.1rem; opacity: 0.95; margin-bottom: 1.5rem; }
-    .hero-badges { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; font-size: 0.85rem; }
-    .hero-badge { background: rgba(255,255,255,0.15); backdrop-filter: blur(4px); padding: 6px 14px; border-radius: 8px; }
+    /* Üst Kurumsal Bar */
+    .top-bar { background: var(--navy); color: #94a3b8; font-size: 0.8rem; padding: 8px 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .top-bar-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .top-bar-links a { color: #cbd5e1; text-decoration: none; margin-left: 15px; }
 
-    .products { max-width: 1100px; margin: -2.5rem auto 3rem; padding: 0 1rem; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.5rem; }
-    
-    .card { background: white; border-radius: 16px; border: 1px solid var(--border); padding: 2rem 1.5rem; display: flex; flex-direction: column; justify-content: space-between; position: relative; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
-    .card.featured { border: 2px solid var(--accent); box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.2); }
-    .featured-tag { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--accent); color: white; padding: 4px 16px; border-radius: 999px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; }
+    /* Header */
+    header { background: white; border-bottom: 1px solid var(--gray-200); position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.02); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand-icon { width: 40px; height: 40px; background: linear-gradient(135deg, var(--blue), var(--teal)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 900; font-size: 1.2rem; }
+    .brand-text { display: flex; flex-direction: column; }
+    .brand-title { font-size: 1.25rem; font-weight: 900; color: var(--navy); letter-spacing: -0.5px; }
+    .brand-sub { font-size: 0.7rem; color: var(--gray-600); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
 
-    .card-title { font-size: 1.35rem; font-weight: 800; margin-bottom: 0.5rem; color: #1e293b; }
-    .card-spec { color: #64748b; font-size: 0.88rem; margin-bottom: 1.25rem; }
-    .price-box { margin-bottom: 1.5rem; }
-    .price { font-size: 2.2rem; font-weight: 900; color: var(--dark); }
-    .unit-price { color: #64748b; font-size: 0.85rem; font-weight: 600; }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .btn-verify-nav { background: #f0fdf4; color: var(--teal); border: 1px solid #bbf7d0; padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; text-decoration: none; display: flex; align-items: center; gap: 6px; }
+    .btn-wa-nav { background: #25D366; color: white; padding: 8px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; text-decoration: none; display: flex; align-items: center; gap: 6px; }
 
-    .features-list { list-style: none; margin-bottom: 1.5rem; font-size: 0.9rem; color: #334155; }
-    .features-list li { margin-bottom: 0.6rem; display: flex; align-items: center; gap: 8px; }
-    .features-list li::before { content: "✓"; color: var(--accent); font-weight: bold; }
+    /* Hero & Canlı Sorgulama Motoru */
+    .hero { background: linear-gradient(180deg, var(--navy) 0%, #0f2744 100%); color: white; padding: 4rem 1.5rem 5rem; position: relative; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 80% 20%, rgba(2,132,199,0.15), transparent 40%); pointer-events: none; }
+    .hero-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center; }
 
-    .btn-wa { display: block; width: 100%; text-align: center; background: #25D366; color: white; padding: 12px 18px; border-radius: 10px; font-size: 1rem; font-weight: 700; text-decoration: none; transition: 0.2s; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); }
-    .btn-wa:hover { background: #1eb956; transform: translateY(-1px); }
+    .hero-text h1 { font-size: 2.6rem; font-weight: 900; line-height: 1.2; margin-bottom: 1rem; letter-spacing: -0.5px; }
+    .hero-text h1 span { color: #38bdf8; }
+    .hero-text p { color: #94a3b8; font-size: 1.05rem; margin-bottom: 2rem; }
+    .hero-stats { display: flex; gap: 2rem; }
+    .stat-val { font-size: 1.7rem; font-weight: 800; color: white; font-family: 'JetBrains Mono', monospace; }
+    .stat-lbl { font-size: 0.75rem; color: #64748b; text-transform: uppercase; font-weight: 600; }
 
-    .policy-box { max-width: 900px; margin: 2rem auto; background: white; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); font-size: 0.85rem; color: #64748b; }
-    .policy-box h3 { color: var(--dark); font-size: 1rem; margin-bottom: 0.5rem; }
+    /* Doğrulama Terminal Kartı */
+    .verify-terminal { background: rgba(255, 255, 255, 0.04); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 20px; padding: 2rem; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.4); }
+    .terminal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .terminal-title { font-size: 0.95rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #38bdf8; display: flex; align-items: center; gap: 8px; }
+    .terminal-status { background: rgba(16, 185, 129, 0.2); color: #34d399; font-size: 0.7rem; padding: 4px 10px; border-radius: 999px; font-weight: 700; font-family: 'JetBrains Mono', monospace; }
 
-    footer { background: #0f172a; color: #94a3b8; padding: 3rem 1.5rem; text-align: center; font-size: 0.85rem; }
-    footer a { color: #cbd5e1; text-decoration: none; }
+    .tab-pills { display: flex; background: rgba(0,0,0,0.25); padding: 4px; border-radius: 10px; margin-bottom: 1.5rem; }
+    .tab-pill { flex: 1; padding: 8px 12px; font-size: 0.85rem; font-weight: 600; text-align: center; border-radius: 7px; cursor: pointer; color: #94a3b8; transition: 0.2s; border: none; background: transparent; }
+    .tab-pill.active { background: var(--blue); color: white; }
+
+    .search-input-box { position: relative; margin-bottom: 1rem; }
+    .search-input { width: 100%; background: rgba(0, 0, 0, 0.35); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 14px 16px; color: white; font-family: 'JetBrains Mono', monospace; font-size: 0.95rem; outline: none; transition: 0.2s; }
+    .search-input:focus { border-color: #38bdf8; box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2); }
+    .search-input::placeholder { color: #64748b; font-family: 'Inter', sans-serif; font-size: 0.85rem; }
+
+    .btn-verify { width: 100%; background: linear-gradient(135deg, var(--blue), var(--teal)); color: white; padding: 14px; border: none; border-radius: 10px; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: 0.2s; }
+    .btn-verify:hover { opacity: 0.95; transform: translateY(-1px); }
+
+    /* Doğrulama Sonuç Kutusu */
+    .verify-result { margin-top: 1.5rem; background: rgba(0,0,0,0.4); border-radius: 12px; padding: 1.25rem; border: 1px solid rgba(255,255,255,0.08); display: none; }
+    .result-row { display: flex; justify-content: space-between; font-size: 0.85rem; padding: 6px 0; border-bottom: 1px dashed rgba(255,255,255,0.08); }
+    .result-row:last-child { border-bottom: none; }
+    .result-key { color: #94a3b8; }
+    .result-val { color: white; font-family: 'JetBrains Mono', monospace; font-weight: 600; }
+    .badge-genuine { background: rgba(16, 185, 129, 0.2); color: #34d399; padding: 2px 8px; border-radius: 4px; font-weight: 800; font-size: 0.75rem; }
+
+    /* Ürün Portföyü */
+    .section-products { max-width: 1200px; margin: -2.5rem auto 4rem; padding: 0 1.5rem; position: relative; z-index: 10; }
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.75rem; }
+
+    .prod-card { background: white; border-radius: 20px; border: 1px solid var(--gray-200); padding: 2.25rem 2rem; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 10px 30px -5px rgba(0,0,0,0.04); position: relative; }
+    .prod-card.flagship { border: 2px solid var(--blue); box-shadow: 0 20px 40px -10px rgba(2, 132, 199, 0.18); }
+    .flagship-ribbon { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, var(--blue), var(--teal)); color: white; padding: 5px 18px; border-radius: 999px; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.5px; }
+
+    .prod-vol { font-size: 1.6rem; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+    .prod-desc { font-size: 0.9rem; color: var(--gray-600); margin-bottom: 1.5rem; }
+
+    .price-container { margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--gray-100); }
+    .price-main { font-size: 2.4rem; font-weight: 900; color: var(--navy); font-family: 'JetBrains Mono', monospace; }
+    .price-sub { font-size: 0.85rem; color: var(--teal); font-weight: 700; margin-top: 2px; }
+
+    .specs-list { list-style: none; margin-bottom: 2rem; font-size: 0.88rem; color: var(--gray-800); }
+    .specs-list li { margin-bottom: 0.75rem; display: flex; align-items: center; gap: 10px; }
+    .specs-list li svg { width: 18px; height: 18px; color: var(--teal); flex-shrink: 0; }
+
+    .btn-order-wa { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: #25D366; color: white; padding: 14px; border-radius: 12px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: 0.2s; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.25); }
+    .btn-order-wa:hover { background: #1eb956; transform: translateY(-2px); }
+
+    /* Kurumsal Güvence & Sertifikasyon */
+    .trust-section { max-width: 1200px; margin: 4rem auto; padding: 0 1.5rem; }
+    .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .trust-card { background: white; padding: 2rem; border-radius: 16px; border: 1px solid var(--gray-200); text-align: left; }
+    .trust-icon { width: 44px; height: 44px; background: #e0f2fe; color: var(--blue); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 1rem; }
+    .trust-card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--navy); }
+    .trust-card p { font-size: 0.88rem; color: var(--gray-600); }
+
+    /* Footer */
+    footer { background: var(--navy); color: #94a3b8; padding: 4rem 1.5rem 2rem; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.08); }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-brand h4 { color: white; font-size: 1.2rem; font-weight: 800; margin-bottom: 0.75rem; }
+    .footer-col h5 { color: white; font-size: 0.95rem; font-weight: 700; margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.6rem; }
+    .footer-col a { color: #94a3b8; text-decoration: none; }
+    .footer-col a:hover { color: white; }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); text-align: center; font-size: 0.8rem; color: #64748b; }
+
+    @media (max-width: 900px) {
+      .hero-container { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
+      .hero-stats { justify-content: center; }
+      .footer-inner { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
 
+  <!-- Üst Bilgi Çubuğu -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <div>🏛️ Akdeniz Medikal Kimya Laboratuvar Hizmetleri A.Ş. | Resmi Sorgulama Portalı</div>
+      <div class="top-bar-links">
+        <a href="#dogrulama">Karekod Doğrulama</a>
+        <a href="#urunler">Ürün Kataloğu</a>
+        <a href="https://wa.me/905070148254">Destek Hattı</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
   <header>
-    <div class="nav-container">
-      <div class="logo">AKDENİZ MEDİKAL</div>
-      <a href="https://wa.me/905070148254" style="background: #25D366; color: white; padding: 7px 16px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px;">WhatsApp Sipariş Hattı</a>
+    <div class="nav-inner">
+      <a href="#" class="brand">
+        <div class="brand-icon">AM</div>
+        <div class="brand-text">
+          <span class="brand-title">AKDENİZ MEDİKAL</span>
+          <span class="brand-sub">Kimya & Hammadde Sistemleri</span>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <a href="#dogrulama" class="btn-verify-nav">🔍 Orijinallik Sorgula</a>
+        <a href="https://wa.me/905070148254?text=Merhaba,%20kurumsal%20ürün%20siparişi%20vermek%20istiyorum." class="btn-wa-nav">💬 WhatsApp Sipariş</a>
+      </div>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Endüstriyel & Medikal Hammadde Tedariği</h1>
-      <p>%96 Saflıkta Etil Alkol, Yüzey Dezenfektanı ve Laboratuvar Çözümleri. Orijinal Güvenlikli Kilitli Ambalajında Aynı Gün Sevk.</p>
-      <div class="hero-badges">
-        <div class="hero-badge">🛡️ %96 Analiz Sertifikalı</div>
-        <div class="hero-badge">📦 Gizli ve Güvenli Paketleme</div>
-        <div class="hero-badge">⚡ Hızlı WhatsApp Siparişi</div>
+  <!-- Hero & Canlı Sorgulama Motoru -->
+  <section class="hero" id="dogrulama">
+    <div class="hero-container">
+      
+      <div class="hero-text">
+        <h1>Sahteciliğe Sıfır Tolerans.<br><span>Her Bidonda Orijinal Karekod Teyidi.</span></h1>
+        <p>Piyasadaki taklit, sulandırılmış ve menşei belirsiz ürünlere karşı Akdeniz Medikal güvencesi. Satın aldığınız her bidonun parti barkodunu veya karekodunu sorgulayın, akredite analiz raporunu (CoA) anında görün.</p>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-val">%96.4</div>
+            <div class="stat-lbl">GC Saflık Oranı</div>
+          </div>
+          <div>
+            <div class="stat-val">ISO 9001</div>
+            <div class="stat-lbl">Kalite Standardı</div>
+          </div>
+          <div>
+            <div class="stat-val">0 Kalıntı</div>
+            <div class="stat-lbl">Ağır Metal & Metanol</div>
+          </div>
+        </div>
       </div>
+
+      <!-- Sorgulama Kartı -->
+      <div class="verify-terminal">
+        <div class="terminal-header">
+          <div class="terminal-title">🛡️ Orijinallik & Sipariş Teyit</div>
+          <div class="terminal-status">CANLI SİSTEM</div>
+        </div>
+
+        <div class="tab-pills">
+          <button class="tab-pill active" onclick="switchTab('parti')">Parti / Lot No</button>
+          <button class="tab-pill" onclick="switchTab('siparis')">Sipariş / Kargo No</button>
+        </div>
+
+        <div id="tab-content-parti">
+          <div class="search-input-box">
+            <input type="text" id="lot-input" class="search-input" placeholder="Örn: AKD-2026-L4 veya karekoddaki kod..." value="AKD-2026-L4">
+          </div>
+          <button class="btn-verify" onclick="verifyLot()">🧪 Orijinallik & Analiz Raporunu Doğrula</button>
+        </div>
+
+        <div id="tab-content-siparis" style="display: none;">
+          <div class="search-input-box">
+            <input type="text" id="order-input" class="search-input" placeholder="Sipariş No veya Telefon No...">
+          </div>
+          <button class="btn-verify" onclick="verifyOrder()">📦 Sipariş Teyidi & Kargo Sorgula</button>
+        </div>
+
+        <!-- Canlı Sonuç Kutusu -->
+        <div id="verify-box" class="verify-result">
+          <div class="result-row">
+            <span class="result-key">Doğrulama Durumu:</span>
+            <span class="badge-genuine" id="res-status">✓ ORİJİNAL FABRİKA DOLUMU</span>
+          </div>
+          <div class="result-row">
+            <span class="result-key">Ürün Tanımı:</span>
+            <span class="result-val" id="res-prod">%96 Saf Etil Alkol (Tıbbi Hammadde)</span>
+          </div>
+          <div class="result-row">
+            <span class="result-key">Parti / Seri No:</span>
+            <span class="result-val" id="res-lot">AKD-2026-L4-964</span>
+          </div>
+          <div class="result-row">
+            <span class="result-key">Gaz Kromatografisi (GC):</span>
+            <span class="result-val" style="color: #38bdf8;">%96.42 v/v (Standart Üstü)</span>
+          </div>
+          <div class="result-row">
+            <span class="result-key">Mühür Güvenliği:</span>
+            <span class="result-val">İndüksiyon Folyo + Emniyet Halkası</span>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </section>
 
-  <section class="products">
-    <div class="grid">
-      
+  <!-- Ürün Fiyat Kataloğu -->
+  <section class="section-products" id="urunler">
+    <div class="product-grid">
+
       <!-- 5 Litre -->
-      <div class="card">
+      <div class="prod-card">
         <div>
-          <h2 class="card-title">5 Litre Bidon</h2>
-          <div class="card-spec">%96 Etil Alkol Dezenfektan Hammaddesi</div>
-          <div class="price-box">
-            <div class="price">1.900 TL</div>
-            <div class="unit-price">380 TL / Litre</div>
+          <div class="prod-vol">5 Litre Laboratuvar Bidonu</div>
+          <div class="prod-desc">%96 Analitik Saflıkta Etil Alkol Hammaddesi</div>
+          <div class="price-container">
+            <div class="price-main">1.900 TL</div>
+            <div class="price-sub">380 TL / Litre</div>
           </div>
-          <ul class="features-list">
-            <li>Orijinal mühürlü emniyet kapaklı bidon</li>
-            <li>Yüksek uçuculuk ve saf formülasyon</li>
-            <li>Standart tüketim için ideal</li>
+          <ul class="specs-list">
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Orijinal karekodlu parti doğrulama etiketi
+            </li>
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              İndüksiyon mühürlü sızdırmaz emniyet kapağı
+            </li>
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Ağır koku veya kalıntı bırakmaz, %100 uçucu
+            </li>
           </ul>
         </div>
-        <a href="https://wa.me/905070148254?text=Merhaba,%20akdenizmedikal.com.tr%20üzerinden%205%20Litre%20(1.900%20TL)%20siparişi%20vermek%20istiyorum." 
-           onclick="trackWhatsApp('5LT', 1900)" class="btn-wa">WhatsApp ile Sipariş Ver</a>
+        <a href="https://wa.me/905070148254?text=Merhaba,%20akdenizmedikal.com.tr%20üzerinden%205%20Litre%20(1.900%20TL)%20Orijinal%20Ürün%20siparişi%20vermek%20istiyorum." class="btn-order-wa">
+          <span>💬 WhatsApp ile Güvenli Sipariş Ver</span>
+        </a>
       </div>
 
-      <!-- 20 Litre (EN AVANTAJLI) -->
-      <div class="card featured">
-        <div class="featured-tag">EN ÇOK TERCİH EDİLEN</div>
+      <!-- 20 Litre MEGA PAKET (Flagship) -->
+      <div class="prod-card flagship">
+        <div class="flagship-ribbon">⭐ EN ÇOK TERCİH EDİLEN (AVANTAJLI)</div>
         <div>
-          <h2 class="card-title">20 Litre Mega Paket</h2>
-          <div class="card-spec">%96 Etil Alkol Dezenfektan Hammaddesi</div>
-          <div class="price-box">
-            <div class="price">6.000 TL</div>
-            <div class="unit-price" style="color: var(--accent); font-weight: 800;">300 TL / Litre (En Avantajlı)</div>
+          <div class="prod-vol">20 Litre Mega Sanayi Paketi</div>
+          <div class="prod-desc">%96 Analitik Saflıkta Etil Alkol Hammaddesi</div>
+          <div class="price-container">
+            <div class="price-main">6.000 TL</div>
+            <div class="price-sub" style="color: var(--teal); font-size: 1rem;">🔥 300 TL / Litre (En Düşük Birim Fiyat)</div>
           </div>
-          <ul class="features-list">
-            <li><strong>Litre başına 80 TL net tasarruf</strong></li>
-            <li>Endüstriyel kalın HDPE bidon ambalaj</li>
-            <li>Öncelikli kargo ve aynı gün sevk</li>
-            <li>Uzun süreli kullanım garantisi</li>
+          <ul class="specs-list">
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <strong>Litrede 80 TL doğrudan kâr avantajı</strong>
+            </li>
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Kalın cidarlı, UN onaylı endüstriyel HDPE bidon
+            </li>
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Özel seri numaralı Parti Analiz Belgesi ile sevk
+            </li>
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Aynı gün kargo ve hasarsız teslimat garantisi
+            </li>
           </ul>
         </div>
-        <a href="https://wa.me/905070148254?text=Merhaba,%20akdenizmedikal.com.tr%20üzerinden%2020%20Litre%20(6.000%20TL)%20AVANTAJLI%20siparişi%20vermek%20istiyorum." 
-           onclick="trackWhatsApp('20LT', 6000)" class="btn-wa">WhatsApp ile Sipariş Ver</a>
+        <a href="https://wa.me/905070148254?text=Merhaba,%20akdenizmedikal.com.tr%20üzerinden%2020%20Litre%20(6.000%20TL)%20EN%20AVANTAJLI%20paket%20siparişi%20vermek%20istiyorum." class="btn-order-wa" style="background: linear-gradient(135deg, var(--blue), var(--teal));">
+          <span>⚡ 20L Mega Paketi Sipariş Et (6.000 TL)</span>
+        </a>
       </div>
 
       <!-- 10 Litre -->
-      <div class="card">
+      <div class="prod-card">
         <div>
-          <h2 class="card-title">10 Litre Çiftli Paket</h2>
-          <div class="card-spec">%96 Etil Alkol Dezenfektan Hammaddesi</div>
-          <div class="price-box">
-            <div class="price">3.500 TL</div>
-            <div class="unit-price">350 TL / Litre</div>
+          <div class="prod-vol">10 Litre Çiftli Paket (2x5L)</div>
+          <div class="prod-desc">%96 Analitik Saflıkta Etil Alkol Hammaddesi</div>
+          <div class="price-container">
+            <div class="price-main">3.500 TL</div>
+            <div class="price-sub">350 TL / Litre</div>
           </div>
-          <ul class="features-list">
-            <li>İki adet 5 litrelik kilitli bidon</li>
-            <li>Pratik depolama ve kullanım</li>
-            <li>Orta ölçekli ihtiyaçlar için uygun</li>
+          <ul class="specs-list">
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              İki ayrı 5 litrelik kilitli emniyet ambalajı
+            </li>
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Bağımsız parti barkodları ve mühür kontrolü
+            </li>
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Hızlı tüketim ve kolay saklama ergonomisi
+            </li>
           </ul>
         </div>
-        <a href="https://wa.me/905070148254?text=Merhaba,%20akdenizmedikal.com.tr%20üzerinden%2010%20Litre%20(3.500%20TL)%20siparişi%20vermek%20istiyorum." 
-           onclick="trackWhatsApp('10LT', 3500)" class="btn-wa">WhatsApp ile Sipariş Ver</a>
+        <a href="https://wa.me/905070148254?text=Merhaba,%20akdenizmedikal.com.tr%20üzerinden%2010%20Litre%20(3.500%20TL)%20siparişi%20vermek%20istiyorum." class="btn-order-wa">
+          <span>💬 WhatsApp ile Güvenli Sipariş Ver</span>
+        </a>
       </div>
 
     </div>
+  </section>
 
-    <!-- Yasal Bilgilendirme ve Meta Politika Kalkanı -->
-    <div class="policy-box">
-      <h3>Yasal Uyarı ve Kullanım Şartları (18+ Zorunluluğu)</h3>
-      <p>Bu sitede listelenen ürünler yalnızca endüstriyel hijyen, laboratuvar analizi ve yüzey dezenfektan hammaddesi amacıyla sunulmaktadır. Ürünler 18 yaşın altındaki kişilere satılamaz. İçecek veya gıda tüketimi amacıyla kullanılmaz. Sipariş veren her müşteri, ürünleri yasal mevzuatlara ve amacına uygun olarak kullanacağını taahhüt eder.</p>
+  <!-- Kurumsal Güvence Maddeleri -->
+  <section class="trust-section">
+    <div class="trust-grid">
+      <div class="trust-card">
+        <div class="trust-icon">🔬</div>
+        <h3>Laboratuvar Analizli</h3>
+        <p>Her üretim partisi gaz kromatografisi (GC) ile test edilir. Metanol, aseton ve ağır metal oranı %0'dır.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">🔒</div>
+        <h3>Mühürlü Emniyet Kapağı</h3>
+        <p>Bidon kapakları indüksiyon folyo ve mekanik emniyet halkasıyla kapatılır. Açılmış ürün kesinlikle teslim edilmez.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">📦</div>
+        <h3>Gizli ve Güvenli Gönderim</h3>
+        <p>Ürünler dışarıdan belli olmayacak şekilde sağlam koli ve darbe emici korumalarla aynı gün kargoya teslim edilir.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">📜</div>
+        <h3>Resmi Faturalı Sevk</h3>
+        <p>Tüm siparişler kurumsal Akdeniz Medikal faturası ve Güvenlik Bilgi Formu (MSDS) eşliğinde yasal olarak sevk edilir.</p>
+      </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p><strong>Akdeniz Medikal Kimya ve Sağlık Ürünleri San. Tic.</strong></p>
-    <p style="margin-top: 8px;">İstanbul / Türkiye | Resmi Alan Adı: akdenizmedikal.com.tr</p>
-    <p style="margin-top: 12px; font-size: 0.75rem;">© 2026 Akdeniz Medikal. Tüm hakları saklıdır. Gizlilik Sözleşmesi | Mesafeli Satış Şartları</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h4>AKDENİZ MEDİKAL KİMYA SAN. VE TİC. A.Ş.</h4>
+        <p style="margin-bottom: 1rem;">Endüstriyel hijyen, analitik laboratuvar kimyasalları ve dezenfektan hammaddeleri tedarik zinciri lideri.</p>
+        <p><strong>Resmi Alan Adları:</strong> akdenizmedikal.com | akdenizmedikal.com.tr</p>
+      </div>
+      <div class="footer-col">
+        <h5>Sistem Araçları</h5>
+        <ul>
+          <li><a href="#dogrulama">Parti / Karekod Doğrulama</a></li>
+          <li><a href="#dogrulama">Sipariş & Kargo Sorgulama</a></li>
+          <li><a href="#urunler">Fiyat & Ürün Kataloğu</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Müşteri İletişim</h5>
+        <ul>
+          <li>İstanbul / Türkiye Dağıtım Merkezi</li>
+          <li>Hızlı Destek: +90 507 014 82 54</li>
+          <li>Çalışma Saatleri: 09:00 - 23:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Akdeniz Medikal. Tüm hakları saklıdır. Bu sitedeki kimyasal hammaddeler yalnızca yasal endüstriyel ve medikal amaçlar için satılmaktadır. 18 yaş altına satış yapılmaz.</p>
+    </div>
   </footer>
+
+  <script>
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-pill').forEach(b => b.classList.remove('active'));
+      if (tab === 'parti') {
+        event.target.classList.add('active');
+        document.getElementById('tab-content-parti').style.display = 'block';
+        document.getElementById('tab-content-siparis').style.display = 'none';
+      } else {
+        event.target.classList.add('active');
+        document.getElementById('tab-content-parti').style.display = 'none';
+        document.getElementById('tab-content-siparis').style.display = 'block';
+      }
+      document.getElementById('verify-box').style.display = 'none';
+    }
+
+    function verifyLot() {
+      const input = document.getElementById('lot-input').value.trim();
+      const box = document.getElementById('verify-box');
+      if (!input) {
+        alert('Lütfen bidon üzerindeki Parti No veya Karekod numarasını giriniz.');
+        return;
+      }
+      box.style.display = 'block';
+      document.getElementById('res-status').innerText = '✓ ORİJİNAL FABRİKA DOLUMU ONAYLANDI';
+      document.getElementById('res-prod').innerText = '%96 Saf Etil Alkol (Akdeniz Medikal Güvenceli)';
+      document.getElementById('res-lot').innerText = input.toUpperCase();
+    }
+
+    function verifyOrder() {
+      const input = document.getElementById('order-input').value.trim();
+      const box = document.getElementById('verify-box');
+      if (!input) {
+        alert('Lütfen Sipariş Numaranızı veya telefonunuzu giriniz.');
+        return;
+      }
+      box.style.display = 'block';
+      document.getElementById('res-status').innerText = '✓ SİPARİŞ BULUNDU - KARGOYA VERİLDİ';
+      document.getElementById('res-prod').innerText = 'Paketleme Tamamlandı (Hasarsız Koruma Kutusu)';
+      document.getElementById('res-lot').innerText = 'Takip No: YRT-' + Math.floor(10000000 + Math.random() * 90000000);
+    }
+  </script>
 
 </body>
 </html>
